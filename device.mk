@@ -74,7 +74,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.AGMIPC@1.0-service \
     vendor.qti.hardware.pal@1.0-impl
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
+AUDIO_HAL_DIR := vendor/qcom/opensource/audio-hal/primary-hal
 
 PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/common/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
@@ -331,9 +331,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 # QSSI overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
@@ -371,6 +368,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
+# QTI
+TARGET_BOARD_PLATFORM := taro
 
 # QMI
 PRODUCT_PACKAGES += \
