@@ -331,15 +331,6 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-# QSSI overlays
-PRODUCT_PACKAGES += \
-    CarrierConfigResCommon \
-    FrameworksResCommon \
-    NTWifiResCommon \
-    SystemUIResCommon \
-    TelephonyResCommon \
-    WifiResCommon
-
 # TARO overlays
 PRODUCT_PACKAGES += \
     FrameworksResTarget \
