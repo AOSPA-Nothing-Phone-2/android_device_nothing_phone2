@@ -7,7 +7,7 @@
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-DEVICE_PATH := device/nothing/Pong
+DEVICE_PATH := device/nothing/phone2
 
 # A/B
 AB_OTA_UPDATER := true
@@ -233,4 +233,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Include the proprietary files BoardConfig.
-include vendor/nothing/Pong/BoardConfigVendor.mk
+include vendor/nothing/phone2/BoardConfigVendor.mk

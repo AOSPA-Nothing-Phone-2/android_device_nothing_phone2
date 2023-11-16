@@ -523,4 +523,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/nothing/Pong/Pong-vendor.mk)
+$(call inherit-product, vendor/nothing/phone2/phone2-vendor.mk)
