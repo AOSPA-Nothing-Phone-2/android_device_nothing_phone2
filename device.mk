@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 # Fingerprint
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.nothing
 
 PRODUCT_COPY_FILES += \
