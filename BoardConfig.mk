@@ -82,7 +82,7 @@ SOONG_CONFIG_qtidisplay_udfps := true
 TARGET_SCREEN_DENSITY := 420
 
 # Fingerprint
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.nothing
+# TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.nothing
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
