@@ -270,6 +270,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster_messages.vendor
 
+# Kernel Binary
+KERNEL_PREBUILT_DIR := device/nothing/phone2-kernel
+
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml \
