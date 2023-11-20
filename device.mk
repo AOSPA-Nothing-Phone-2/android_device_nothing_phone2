@@ -156,27 +156,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.class_main.sh \
     init.nt.rc \
-    init.qcom.early_boot.sh \
-    init.qcom.rc \
-    init.qcom.recovery.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.target.rc \
-    ueventd.nt.rc \
-    ueventd.qcom.rc
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster-V3-ndk_platform.vendor \
-    android.hardware.keymaster@4.1.vendor \
-    libkeymaster_messages.vendor
+    ueventd.nt.rc
 
 # Kernel Binary
 KERNEL_PREBUILT_DIR := device/nothing/phone2-kernel
+
+# Keymaster
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
+    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
 
 # Keymint
 PRODUCT_PACKAGES += \
@@ -184,10 +176,6 @@ PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
     android.hardware.security.secureclock-V1-ndk_platform.vendor \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
-    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
 # Net
 PRODUCT_PACKAGES += \
@@ -235,15 +223,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    android.hardware.power@1.2.vendor \
-    vendor.qti.hardware.perf@2.3.vendor
-
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 # QTI
 TARGET_BOARD_PLATFORM := taro
 
@@ -265,25 +244,9 @@ TARGET_COMMON_QTI_COMPONENTS := \
     wfd \
     wlan
 
-# QMI
-PRODUCT_PACKAGES += \
-    libjson \
-    libqti_vndfwk_detect.vendor \
-    libqti_vndfwk_detect_vendor \
-    libvndfwk_detect_jni.qti.vendor \
-    libvndfwk_detect_jni.qti_vendor
-
 # QTI service tracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    libprotobuf-cpp-full \
-    librmnetctl
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -334,10 +297,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
