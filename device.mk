@@ -510,8 +510,5 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/nothing/phone2/phone2-vendor.mk)
