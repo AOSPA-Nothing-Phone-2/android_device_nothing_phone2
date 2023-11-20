@@ -156,6 +156,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 PRODUCT_PACKAGES += \
+    init.target.rc \
+    init.qcom.recovery.rc \
+    init.qcom.early_boot.sh \
     init.nt.rc \
     ueventd.nt.rc
 
